@@ -194,12 +194,18 @@ Para separar:
             Tag	tag_name	String
 6. Como Executar
 
-            Coloque os CSVs na pasta import do Neo4j
+            Coloque os CSVs na pasta import de seu directorio de importação para Neo4j
+                   follows.csv
+                   likes.csv
+                   photo_tags.csv
+                   photos.csv
+                   tags.csv
+                   users.csv;
             Execute os blocos em ordem sequencial
             Verifique se constraints foram criadas
             Execute análises
 
-7. Resultados Esperados
+8. Resultados Esperados
 
             Após execução completa:
             Grafo conectado entre usuários e posts
@@ -207,7 +213,7 @@ Para separar:
             Dados temporalmente consistentes
             Interações representadas como relações direcionadas
 
-8. Potenciais Extensões
+9. Potenciais Extensões
 
             Cálculo de PageRank
             Centralidade de grau
@@ -215,7 +221,7 @@ Para separar:
             Recomendação de conteúdo
             Detecção de influenciadores
 
-9. Conclusão
+10. Conclusão
 
 Este projeto demonstra a modelagem de rede social em banco de dados orientado a grafos, construção estruturada de dados, aplicação de constraints assim mesmo executa análise de padrões de interação com base em estudos avançados de análise de redes sociais.
 
