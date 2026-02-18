@@ -225,14 +225,12 @@ Para separar:
 
 Este projeto demonstra a modelagem de rede social em banco de dados orientado a grafos, construção estruturada de dados, aplicação de constraints assim mesmo executa análise de padrões de interação com base em estudos avançados de análise de redes sociais.
 
-## 01_schema.cypher
-
-Responsável por:
+## Bloco 01: Responsável por:
 
 -   Criação de constraints
 -   Definição de unicidade (User.id)
 -   Preparação da base estrutural do grafo
--   
+   
 # ⚙️ Ordem de Execução Recomendada
 
 Este arquivo deve ser executado por partes por exemplo bloco 1A e logo bloco 2A, o outros bloco 2A logo 2b e aassim sucesivamente em Neo4j. a versao de Neo4j fo a 2.1.1 Desktop
