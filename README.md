@@ -2,13 +2,32 @@
 
 ## 📌 Overview
 
-Este projeto implementa um modelo de grafo inspirado na estrutura do
-Instagram utilizando Neo4j e Cypher. O objetivo é demonstrar modelagem
-de grafos sociais, análise de centralidade, caminhos mínimos,
-engajamento e recomendações.
+Este projeto implementa um modelo de grafo inspirado na estrutura do Instagram utilizando Neo4j e Cypher. O objetivo é demonstrar modelagem de grafos sociais, análise de centralidade, caminhos mínimos, engajamento e recomendações.
+Desafio de Projeto: Analises de Redes Sociais
 
-O projeto está organizado em quatro arquivos principais para melhor
-modularização e execução controlada.
+Este Produto: Oferece insights sobre engajamentos e conexões com base em usuários de uma plataforma. Construimos um protótipo funcional que possa responder a perguntas complexas sobre interações de usuários, popularidade de conteúdo e comunidades de interesse.
+
+Objetivo:
+
+Em lugar de ter uma tabela de usuários e informações você vai ter um grafo disso com:
+        - Usuários(pessoas)
+        - Posts
+        - Grupos 
+        - Comunidades
+
+Uma pessoa segue a outra, uma pessoa publico algo, uma pessoa curtio algo, uma pessoa pertence a um grupo.
+A pessoa curtio um post
+
+Construimos algumas queries como:
+
+    •	Como que as pessoas estão relacionadas
+    •	Qual que e a menor distancia de uma pessoa para outra
+    •	Se eu quisesse seguir 5 usuários. Como recomendaria os melhores 5 usuários, quais pessoas você recomendaria por que? Exemplo            através de um relacionamento de amizade indireta
+    •	Qual foi a postagem mais curtida no ultimo mês com base num critério X, será que elas são amigos
+
+- Como exemplo: Se eu sou amigo de uma pessoa A e ela esta relacionada com uma pessoa B, C, qual que o menor caminho como chego a pessoa E. Qual que e o menor caminho como devo recorrer para chegar a pessoa E
+
+- Construimos um grafo para responder perguntas como: qual que e a menor distancia de uma pessoa para outra. Pode usar nós intermediários
 
 ------------------------------------------------------------------------
 
