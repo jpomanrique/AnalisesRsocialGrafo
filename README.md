@@ -237,9 +237,7 @@ Este arquivo deve ser executado por partes por exemplo bloco 1A e logo bloco 2A,
 
 ------------------------------------------------------------------------
 
-## 02_import.cypher
-
-Responsável por:
+## Bloco 02: Responsável por:
 
 -   Criação de usuários principais
 -   Criação de posts
@@ -252,9 +250,7 @@ Responsável por:
 
 ------------------------------------------------------------------------
 
-## Bloco 03_analysis
-
-Responsável por:
+## Bloco 03 de analises. Responsável por:
 
 -   Degree Centrality (in-degree / out-degree)
 -   Shortest Path
@@ -266,18 +262,44 @@ Contém as principais análises do projeto.
 
 ------------------------------------------------------------------------
 
-## Bloco 04
-
-Responsável por:
+## Bloco 04. Responsável por:
 
 -   Criação de 7 usuários artificiais (IDs 2000--2006)
 -   Criação de estrutura linear FOLLOWS: 2000 → 2001 → 2002 → 2003 →
     2004 → 2005 → 2006
--   Verificação estrutural da rede
+-   Verificação estrutural da rede e otras consultas Cypher
 
 Utilizado para testar algoritmos de caminho e centralidade de forma
 controlada.
+------------------------------------------------------------------------
 
+## BLOCO 5. Estrutura Social e InteraçõesResponsável por:
+
+
+Incluir análises como:
+
+                        Interações entre usuários
+                        Relações bidirecionais
+                        Influência social
+------------------------------------------------------------------------
+
+## BLOCO 6 – Popularidade. Responsável por:
+                        6A – Post mais curtido (últimos 30 dias)
+                                WHERE p.created_at >= datetime() - duration('P30D')
+                        
+                        6B – Tags mais populares
+                                Ordenação por número de posts associados.
+
+------------------------------------------------------------------------
+
+## BLOCO 7 – Comunidades e Métricas. Responsável por:
+
+Incluir:
+
+                        Centralidade ampliada
+                        Caminhos adicionais
+                        Análises estruturais
+                        
 ------------------------------------------------------------------------
 
 # 🧠 Conceitos Aplicados
