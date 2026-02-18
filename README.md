@@ -2,12 +2,11 @@
 
 ## 📌 Overview
 
-Este projeto implementa um modelo de grafo inspirado na estrutura do Instagram utilizando Neo4j e Cypher. O objetivo é demonstrar modelagem de grafos sociais, análise de centralidade, caminhos mínimos, engajamento e recomendações.
-Desafio de Projeto: Analises de Redes Sociais
-
-Este Produto: Oferece insights sobre engajamentos e conexões com base em usuários de uma plataforma. Construimos um protótipo funcional que possa responder a perguntas complexas sobre interações de usuários, popularidade de conteúdo e comunidades de interesse.
+Este projeto implementa um modelo de grafo inspirado na estrutura do Instagram utilizando Neo4j e Cypher. O objetivo é demonstrar modelagem de grafos sociais, análise de centralidade, caminhos mínimos, engajamento e recomendações. 
 
 Objetivo:
+
+O objetivo e resolver o Desafio de Projeto: Analises de Redes Sociais. Este Produto: Oferece insights sobre engajamentos e conexões com base em usuários de uma plataforma. Construimos um protótipo funcional que possa responder a perguntas complexas sobre interações de usuários, popularidade de conteúdo e comunidades de interesse.
 
 Em lugar de ter uma tabela de usuários e informações você vai ter um grafo disso com:
         - Usuários(pessoas)
@@ -40,6 +39,7 @@ Este projeto implementa a modelagem estrutural e análise de uma rede social ins
 O arquivo principal do projeto é: instagram.cypher. Ele está organizado em blocos lógicos com responsabilidades bem definidas.
 
 2. Arquitetura do Grafo
+   
     2.1 Labels (Entidades)
         Label	Representa
         User	Usuários da plataforma
@@ -51,7 +51,8 @@ O arquivo principal do projeto é: instagram.cypher. Ele está organizado em blo
         LIKED	(User → Post)	Usuário curtiu um post
         COMMENTED	(User → Post)	Usuário comentou um post
         HAS_TAG	(Post → Tag)	Post contém determinada tag
-        2.3 Modelo Estrutural
+   
+   2.3 Modelo Estrutural
         (User)-[:POSTED]->(Post)
         (User)-[:LIKED]->(Post)
         (User)-[:COMMENTED]->(Post)
@@ -67,9 +68,13 @@ Essa modelagem permite:
 
 3. Estrutura do instagram.cypher
 
-O arquivo está dividido em quatro grandes blocos.
+O arquivo está dividido em sete grandes blocos:
 
-    BLOCO 1 – Definição do Schema (Constraints)
+## Bloco 01 Definição do Schema (Constraints) Responsável por:
+
+                        -   Criação de constraints
+                        -   Definição de unicidade (User.id)
+                        -   Preparação da base estrutural do grafo
 
         Este bloco estabelece constraints de unicidade para:
 
@@ -77,7 +82,7 @@ O arquivo está dividido em quatro grandes blocos.
             Post.id
             Tag.id
 
-Justificativa
+        Justificativa
 
             Garante integridade dos dados
             Evita duplicação acidental durante MERGE  
@@ -86,7 +91,16 @@ Justificativa
 
 Sem esse bloco, múltiplas execuções poderiam gerar inconsistências.
 
-BLOCO 2 – Importação e Construção do Grafo
+## Bloco 02: Responsável por: Importação e Construção do Grafo
+
+                        -   Criação de usuários principais
+                        -   Criação de posts
+                        -   Criação de relações:
+                            -   FOLLOWS
+                            -   POSTED
+                            -   LIKES
+                            -   COMMENTS
+                        -   Inserção de dados iniciais para análise
 
 Este é o núcleo estrutural do projeto.
 
@@ -141,7 +155,15 @@ Permite:
             Descoberta de padrões de conteúdo
             Identificação de tendências
 
-BLOCO 3 – Consultas Analíticas
+## Bloco 03 de Consultas Analíticas. Responsável por:
+
+                        -   Degree Centrality (in-degree / out-degree)
+                        -   Shortest Path
+                        -   Recomendações baseadas em amigos de amigos
+                        -   Cálculo de engajamento
+                        -   Consultas analíticas gerais
+
+Contém as principais análises do projeto.
 
 Este bloco realiza análises estruturais e métricas de engajamento.
 
@@ -157,7 +179,15 @@ Exemplos de perguntas respondidas:
 
 Essas consultas demonstram exploração de padrões no grafo, não apenas contagem simples.
 
-BLOCO 4 – Testes Estruturais
+## Bloco 04 - Testes Estruturais. Responsável por:
+
+                        -   Criação de 7 usuários artificiais (IDs 2000--2006)
+                        -   Criação de estrutura linear FOLLOWS: 2000 → 2001 → 2002 → 2003 →
+                            2004 → 2005 → 2006
+                        -   Verificação estrutural da rede e otras consultas Cypher
+
+Utilizado para testar algoritmos de caminho e centralidade de forma
+controlada.
 
             Contém consultas auxiliares para:
             Verificação de integridade
@@ -166,7 +196,8 @@ BLOCO 4 – Testes Estruturais
 
 Esse bloco funciona como auditoria estrutural.
 
-4. Decisões de Modelagem
+Decisões de Modelagem
+
 Por que modelar likes e comments como relações?
 
 Porque em grafos:
@@ -183,53 +214,6 @@ Para separar:
             Construção de relações
             Isso melhora clareza e manutenção.
 
-## Bloco 01: Responsável por:
-
--   Criação de constraints
--   Definição de unicidade (User.id)
--   Preparação da base estrutural do grafo
-   
-# ⚙️ Ordem de Execução Recomendada
-
-Este arquivo deve ser executado por partes por exemplo bloco 1A e logo bloco 2A, o outros bloco 2A logo 2b e aassim sucesivamente em Neo4j. a versao de Neo4j fo a 2.1.1 Desktop
-
-------------------------------------------------------------------------
-
-## Bloco 02: Responsável por:
-
--   Criação de usuários principais
--   Criação de posts
--   Criação de relações:
-    -   FOLLOWS
-    -   POSTED
-    -   LIKES
-    -   COMMENTS
--   Inserção de dados iniciais para análise
-
-------------------------------------------------------------------------
-
-## Bloco 03 de analises. Responsável por:
-
--   Degree Centrality (in-degree / out-degree)
--   Shortest Path
--   Recomendações baseadas em amigos de amigos
--   Cálculo de engajamento
--   Consultas analíticas gerais
-
-Contém as principais análises do projeto.
-
-------------------------------------------------------------------------
-
-## Bloco 04. Responsável por:
-
--   Criação de 7 usuários artificiais (IDs 2000--2006)
--   Criação de estrutura linear FOLLOWS: 2000 → 2001 → 2002 → 2003 →
-    2004 → 2005 → 2006
--   Verificação estrutural da rede e otras consultas Cypher
-
-Utilizado para testar algoritmos de caminho e centralidade de forma
-controlada.
-------------------------------------------------------------------------
 
 ## BLOCO 5. Estrutura Social e InteraçõesResponsável por:
 
@@ -256,6 +240,10 @@ Incluir:
                         Centralidade ampliada
                         Caminhos adicionais
                         Análises estruturais
+   
+# ⚙️ Ordem de Execução Recomendada
+
+Este arquivo deve ser executado por partes por exemplo bloco 1A e logo bloco 2A, o outros bloco 2A logo 2b e aassim sucesivamente em Neo4j. a versao de Neo4j fo a 2.1.1 Desktop
 
 ------------------------------------------------------------------------
 
