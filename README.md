@@ -37,27 +37,30 @@ Construimos algumas queries como:
 Este projeto implementa a modelagem estrutural e análise de uma rede social inspirada no Instagram utilizando o modelo de dados em grafo do Neo4j. O objetivo não é apenas importar dados se considero construir uma representação semântica da rede, modelar interações sociais como relações direcionadas, garantir integridade estrutural via constraints, executar análises de engajamento e centralidade e validar consistência estrutural do grafo.
 
 O arquivo principal do projeto é: instagram.cypher. Ele está organizado em blocos lógicos com responsabilidades bem definidas.
-
-2. Arquitetura do Grafo
    
-    2.1 Labels (Entidades)
-        Label	Representa
-        User	Usuários da plataforma
-        Post	Publicações (photos)
-        Tag	Hashtags associadas aos posts
-    2.2 Relações
-        Relação	Direção	Significado
-        POSTED	(User → Post)	Usuário publicou um post
-        LIKED	(User → Post)	Usuário curtiu um post
-        COMMENTED	(User → Post)	Usuário comentou um post
-        HAS_TAG	(Post → Tag)	Post contém determinada tag
-   
-   2.3 Modelo Estrutural
-        (User)-[:POSTED]->(Post)
-        (User)-[:LIKED]->(Post)
-        (User)-[:COMMENTED]->(Post)
-        (Post)-[:HAS_TAG]->(Tag)
+## 2. 📂 Estrutura do Grafo
 
+### Labels (Entidades)
+| Label | Representa |
+|-------|------------|
+| User  | Usuários da plataforma |
+| Post  | Publicações (fotos) |
+| Tag   | Hashtags associadas aos posts |
+
+### Relações
+| Relação   | Direção       | Significado                   |
+|-----------|---------------|-------------------------------|
+| POSTED    | User → Post   | Usuário publicou um post      |
+| LIKED     | User → Post   | Usuário curtiu um post        |
+| COMMENTED | User → Post   | Usuário comentou um post      |
+| HAS_TAG   | Post → Tag    | Post contém determinada tag   |
+
+### Modelo Estrutural
+```cypher
+(User)-[:POSTED]->(Post)
+(User)-[:LIKED]->(Post)
+(User)-[:COMMENTED]->(Post)
+(Post)-[:HAS_TAG]->(Tag)
 
 Essa modelagem permite:
 
