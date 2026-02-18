@@ -183,48 +183,6 @@ Para separar:
             Construção de relações
             Isso melhora clareza e manutenção.
 
-5. Propriedades Relevantes
-            Entidade	Propriedade	Tipo
-            User	id	Integer
-            User	username	String
-            Post	id	Integer
-            Post	image_url	String
-            Post	created_at	Datetime
-            Tag	id	Integer
-            Tag	tag_name	String
-6. Como Executar
-
-            Coloque os CSVs na pasta import de seu directorio de importação para Neo4j
-                   follows.csv
-                   likes.csv
-                   photo_tags.csv
-                   photos.csv
-                   tags.csv
-                   users.csv;
-            Execute os blocos em ordem sequencial
-            Verifique se constraints foram criadas
-            Execute análises
-
-8. Resultados Esperados
-
-            Após execução completa:
-            Grafo conectado entre usuários e posts
-            Estrutura pronta para análise de redes     
-            Dados temporalmente consistentes
-            Interações representadas como relações direcionadas
-
-9. Potenciais Extensões
-
-            Cálculo de PageRank
-            Centralidade de grau
-            Comunidades (Louvain)
-            Recomendação de conteúdo
-            Detecção de influenciadores
-
-10. Conclusão
-
-Este projeto demonstra a modelagem de rede social em banco de dados orientado a grafos, construção estruturada de dados, aplicação de constraints assim mesmo executa análise de padrões de interação com base em estudos avançados de análise de redes sociais.
-
 ## Bloco 01: Responsável por:
 
 -   Criação de constraints
@@ -275,7 +233,6 @@ controlada.
 
 ## BLOCO 5. Estrutura Social e InteraçõesResponsável por:
 
-
 Incluir análises como:
 
                         Interações entre usuários
@@ -299,34 +256,85 @@ Incluir:
                         Centralidade ampliada
                         Caminhos adicionais
                         Análises estruturais
-                        
-------------------------------------------------------------------------
-
-# 🧠 Conceitos Aplicados
-
--   Modelagem de Grafos Sociais
--   Relacionamentos direcionais
--   Degree Centrality
--   Shortest Path
--   Análise de Engajamento
--   Recomendação baseada em vizinhança
-
-------------------------------------------------------------------------
-# 🔒 Boas Práticas Aplicadas
-
--   Uso de MERGE para evitar duplicações
--   Uso de OPTIONAL MATCH para evitar falhas
--   Organização em blocos numerados
--   Estrutura idempotente
--   Compatível com Neo4j 4.x e 5.x
 
 ------------------------------------------------------------------------
 
-# 🎯 Status Final
+5. Propriedades Relevantes
+            Entidade	Propriedade	Tipo
+            User	id	Integer
+            User	username	String
+            Post	id	Integer
+            Post	image_url	String
+            Post	created_at	Datetime
+            Tag	id	Integer
+            Tag	tag_name	String
+   
+7. Como Executar
+------------------------------------------------------------------------
+            Coloque os CSVs na pasta import de seu directorio de importação para Neo4j
+                   follows.csv
+                   likes.csv
+                   photo_tags.csv
+                   photos.csv
+                   tags.csv
+                   users.csv;
+            Execute os blocos em ordem sequencial
+            Verifique se constraints foram criadas
+            Execute análises
 
-✔ Estrutura modularizada\
-✔ Código revisado e corrigido\
-✔ Sem duplicações críticas\
+8. Resultados Esperados
+------------------------------------------------------------------------
+
+        -   Após execução completa:
+        -   Grafo conectado entre usuários e posts
+        -   Estrutura pronta para análise de redes     
+        -   Dados temporalmente consistentes
+        -   Interações representadas como relações direcionadas
+
+------------------------------------------------------------------------
+
+        # 🧠 Conceitos Aplicados
+
+        -   Modelagem de Grafos Sociais
+        -   Relacionamentos direcionais
+        -   Degree Centrality
+        -   Shortest Path
+        -   Análise de Engajamento
+        -   Recomendação baseada em vizinhança
+
+------------------------------------------------------------------------
+        # 🔒 Boas Práticas Aplicadas
+
+        -   Uso de MERGE para evitar duplicações
+        -   Uso de OPTIONAL MATCH para evitar falhas
+        -   Organização em blocos numerados
+        -   Estrutura idempotente
+        -   Compatível com Neo4j 4.x e 5.x
+
+------------------------------------------------------------------------
+
+        # 🎯 Status Final
+        
+        ✔ Estrutura modularizada\
+        ✔ Código revisado e corrigido\
+        ✔ Sem duplicações críticas\
+
+------------------------------------------------------------------------
+
+9. Potenciais Extensões
+
+            Cálculo de PageRank
+            Centralidade de grau
+            Comunidades (Louvain)
+            Recomendação de conteúdo
+            Detecção de influenciadores
+   
+------------------------------------------------------------------------
+
+10. Conclusão
+
+Este projeto demonstra a modelagem de rede social em banco de dados orientado a grafos, construção estruturada de dados, aplicação de constraints assim mesmo executa análise de padrões de interação com base em estudos avançados de análise de redes sociais.
+
 ------------------------------------------------------------------------
 
 # 👤 Autor
