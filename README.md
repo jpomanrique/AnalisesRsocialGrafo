@@ -69,6 +69,8 @@ Essa modelagem permite:
         Análise de afinidade por tags
         Exploração de padrões estruturais
 
+###
+
 3. Estrutura do instagram.cypher
 
 O arquivo está dividido em sete grandes blocos:
